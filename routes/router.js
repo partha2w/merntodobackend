@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
                 res.cookie("todocookie", token, {
                     expires: new Date(Date.now() + 60 * 60 * 1000), // 1 hour
                     httpOnly: true,
-                    // secure: true // set the "secure" flag if using HTTPS
+                    secure: true // set the "secure" flag if using HTTPS
                 });
 
                 return res.status(201).json(token);
